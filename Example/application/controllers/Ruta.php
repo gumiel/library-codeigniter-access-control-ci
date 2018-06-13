@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Usuario extends CI_Controller {
+class Ruta extends CI_Controller {
 
 	public function __construct()
 	{
@@ -11,10 +11,10 @@ class Usuario extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('usuario/index');
+		$this->load->view('ruta/index');	
 	}
 
 }
 
-/* End of file Usuario.php */
-/* Location: ./application/controllers/Usuario.php */
+/* End of file ruta.php */
+/* Location: ./application/controllers/ruta.php */

@@ -1,12 +1,3 @@
-<?php 
-echo "ESTA ES UNA PAGINA PRIVADA (index).<br>";
-echo "variable de session id_usuario=".$this->session->id_usuario."<br>";
-
- ?>
-
-Cerrar session <a href="<?php echo site_url('publico/cerrar'); ?>">CERRAR</a>
-<br>
-<br>
 <br>
 Probar link de pagina privada <a href="<?php echo site_url('usuario/index'); ?>">usuario/index</a><br>
 Probar link de pagina privada <a href="<?php echo site_url('ruta/index'); ?>">ruta/index</a><br>
