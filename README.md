@@ -12,6 +12,7 @@ application/
 --------AccessControlCI/
 ------------config.php
 --------config.php
+--------hooks.php
 ----hooks/
 --------AccessControlCI.php
 ```
@@ -22,8 +23,17 @@ Paso 1.- Para empezar se tiene que activar los HOOKS en el archivo "config.php" 
 $config['enable_hooks'] = TRUE;
 ```
 Paso 2.- Despues copiar el archivo "AccessControlCI.php" en la carpeta "/application/hooks" que es donde esta la logica de la libreria.<br>
-Paso 3.- Despues copiar la carpeta y el archivo "/AccessControlCI/config.php" en la carpeta "application/config". Este es la configuracion de la libreria<br>
-Paso 4.- Configurar con los parametros que necesite como en el ejemplo
+Paso 3.- Agregar un nuevo hoook en el archivo "hooks.php" este archivo tiene el siguiente codigo.<br>
+```
+$hook['post_controller_constructor'] = array(
+                                'class'    => 'AccessControlCI',
+                                'function' => 'checkLogin',
+                                'filename' => 'AccessControlCI.php',
+                                'filepath' => 'hooks'
+                                );
+```
+Paso 4.- Despues copiar la carpeta y el archivo "/AccessControlCI/config.php" en la carpeta "application/config". Este es la configuracion de la libreria<br>
+Paso 5.- Configurar con los parametros que necesite como en el ejemplo
  ```
 $config['pages_public']         = [ "/publico/login", // Estas son las paginas publicas que cualquier usuario podra ingresar  
 								"/publico/inicio",
